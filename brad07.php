@@ -1,5 +1,5 @@
 <?php 
-    $result = $op = '';
+    $result =  $op = '';
     if (isset($_GET['x']) && isset($_GET['y'])){
         $op = $_GET['op'];
         $x = $_GET['x']; $y = $_GET['y'];
@@ -11,7 +11,7 @@
         }else if ($op == 3){
             $result = $x * $y;
         }else if ($op == 4){
-            $result = $x / $y;
+            $result = (int)($x / $y) . ' ...... ' . ($x % $y);
         }else{
             $result = "";
         }
