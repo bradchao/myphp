@@ -5,5 +5,15 @@
     foreach($poker as $v){
         echo $v . '<br />';
     }
-    echo "---<br />"
+    echo "---<br />";
+
+    $players = [[],[],[],[]];
+    foreach($poker as $i => $card){
+        $players[$i % 4][ (int)($i / 4) ] = $card;
+    }
+
+    foreach($players[1] as $v){
+        echo "{$v}<br />";
+    }
+
 ?>
