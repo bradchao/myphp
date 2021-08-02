@@ -1,4 +1,5 @@
 <?php
+
     foreach( $_SERVER as $key => $value){
         if (gettype($value) == 'array'){
             echo "{$key} => ";
