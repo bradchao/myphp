@@ -36,8 +36,19 @@
         return createTWIdByBoth($gender, $area);
     }
     function createTWIdByBoth($gender, $area){
-        $tempId = $area;
-        $tempId .= $gender?'1':'2';
+        // $area .= $gender?'1':'2';
+        // for ($i=0; $i<7; $i++) $area .= rand(0,9);
+        // // A12345678   9 => 0-9
+        // for ($i=0; $i<=9; $i++){
+        //     if (checkTWId($area . $i)){
+        //         $area .= $i;
+        //     }
+        // }
+        // return $area;
+
+        // A123456789
+        $tempId = $area;    // $tempId = 'A';
+        $tempId .= $gender?'1':'2'; // $tempId = 'A1'; $tempId = 'A2'
         // A12345678
         for ($i=0; $i<7; $i++) $tempId .= rand(0,9);
         // A12345678   9 => 0-9
