@@ -16,6 +16,7 @@
     <input type="checkbox" name="habit[]" value="4" />打羽球
     <input type="checkbox" name="habit[]" value="5" />打麻將
     <input type="checkbox" name="habit[]" value="6" />打毛線<br />
+    Memo:<textarea name='memo' rows='10' cols='40'></textarea>
 
     <hr />
     <input type="submit" value="Register" />
