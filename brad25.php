@@ -22,7 +22,10 @@
         //echo func_num_args();  // 傳遞幾個參數資料
         //echo func_get_arg(2); 
         $args = func_get_args();   
-        var_dump($args);
+        //var_dump($args);
+        foreach($args as $name){
+            echo "Hello, {$name}<br />";
+        }
         
     }
 
