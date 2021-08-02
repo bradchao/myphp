@@ -21,4 +21,42 @@
         }
         return false;
     }
+
+    function createTWIdByRandom(){
+        $gender = rand(0,1) == 0;
+        return createTWIdByGender($gender);
+    }
+    function createTWIdByGender($gender = false){
+        $letters = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+        $area = substr($letters, rand(0,25), 1);
+        return createTWIdByBoth($gender, $area);
+    }
+    function createTWIdByArea($area = 'B'){
+        $gender = rand(0,1) == 0;
+        return createTWIdByBoth($gender, $area);
+    }
+    function createTWIdByBoth($gender, $area){
+        $tempId = $area;
+        $tempId .= $gender?'1':'2';
+        // A12345678
+        for ($i=0; $i<7; $i++) $tempId .= rand(0,9);
+        // A12345678   9 => 0-9
+        for ($i=0; $i<=9; $i++){
+            if (checkTWId($tempId . $i)){
+                $tempId .= $i;
+            }
+        }
+        return $tempId;
+    }
+
+
+
+
+
+
+
+
+
+
+
 ?>

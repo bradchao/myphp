@@ -7,8 +7,11 @@
     }else{
         echo 'XX';
     }
-
-    echo fxy(2,3);
+    echo '<hr />';
+    echo "1. " . createTWIdByRandom() . '<br />';
+    echo "2. " . createTWIdByGender(true) . '<br />';
+    echo "3. " . createTWIdByArea('B') . '<br />';
+    echo "4. " . createTWIdByBoth(false, 'C') . '<br />';
 
 
 ?>
