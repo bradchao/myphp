@@ -1,4 +1,11 @@
 <?php
     include "bradapis.php";
-    checkTWId('A123456789');
+    
+    if (checkTWId('A123456789')){
+        echo 'OK';
+    }else{
+        echo 'XX';
+    }
+
+
 ?>
