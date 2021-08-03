@@ -1,4 +1,7 @@
 
+<?php
+    date_default_timezone_set('Asia/Taipei');
+?>
 <table border="1" width="100%" />
     <tr>
         <th>Filename</th>
@@ -11,7 +14,7 @@
     $fp = @opendir($dir) or exit('Server Busy v2');
     if ($fp){
         while ($row = readdir($fp)){
-            $mtime = filemtime("{$dir}/{$row}");
+            $mtime = date('Y-m-d H:i:s' ,filemtime("{$dir}/{$row}"));
             echo '<tr>';
             echo "<td>{$dir}/{$row}</td>";
             
