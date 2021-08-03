@@ -1,9 +1,10 @@
 <?php
-    $fp = @fopen("brad.txt", "r") or die("Server Busy");
+    $fp = @fopen("maskdata.csv", "r") or die("Server Busy");
 
-    while ( $line = @fgets($fp)){
+    while ( $line = trim(@fgets($fp))){
         echo "{$line}<br />";
     }
+
 
     fclose($fp);
 
