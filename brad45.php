@@ -5,8 +5,9 @@
 
     if ($upload['error'] == 0){
         // upload success
+        $filename = date('Ymd_His') . '.jpg';
         if (move_uploaded_file($upload['tmp_name'],
-                "upload/{$upload['name']}")){
+                "upload/{$filename}")){
             echo 'upload success';
         }else{
             "Ooop2!";
@@ -15,5 +16,6 @@
         // upload failure
         echo "Ooop1!";
     }
+
 
 ?>
