@@ -24,3 +24,6 @@
         echo "Ooop1!";
     }
 ?>
+memory_limit = 128M
+post_max_size = 64M
+upload_max_filesize = 32M
