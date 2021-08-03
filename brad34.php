@@ -7,14 +7,24 @@
         <th>Modify Time</th>
     </tr>
 <?php
-    $fp = @opendir('/Applications/MAMP/htdocs/myphp') or exit('Server Busy v2');
+    $dir = '.';
+    $fp = @opendir($dir) or exit('Server Busy v2');
     if ($fp){
         while ($row = readdir($fp)){
+            $mtime = filemtime("{$dir}/{$row}");
             echo '<tr>';
-            echo "<td>{$row}</td>";
-            echo "<td></td>";
-            echo "<td></td>";
-            echo "<td></td>";
+            echo "<td>{$dir}/{$row}</td>";
+            
+            if (is_dir("{$dir}/{$row}")){
+                echo "<td>Directory</td>";
+            }else if (is_file("{$dir}/{$row}")){
+                echo "<td>File</td>";
+            }else{
+                echo "<td></td>";
+            }
+
+            echo '<td align="right">' . filesize("{$dir}/{$row}"). ' bytes </td>';
+            echo "<td>{$mtime}</td>";
             echo '</tr>';
         }
     }else{
