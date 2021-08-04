@@ -5,7 +5,7 @@
     )));
     libxml_set_streams_context($context);
 
-    $fp = fopen('https://www.iii.org.tw/', 'r', false, $context) or die();
+    $fp = fopen('https://www.iii.org.tw/', 'rb', false, $context) or die();
     // $fp = fopen('https://www.bradchao.com/', 'r');
 
     $i = 0;
