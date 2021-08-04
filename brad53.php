@@ -20,4 +20,16 @@
     echo "{$mark->getName()}:Scooter:{$mark->getScooter()->getSpeed()}<br />";
     echo "<hr />";
 
+    var_dump($brad);
+
 ?>
+object(Person)#1 (3) { 
+    ["name":"Person":private]=> string(4) "Brad" 
+    ["bike":"Person":private]=> object(Bike)#2 (1) { 
+        ["speed":protected]=> float(1.728) 
+    } 
+    ["scooter":"Person":private]=> object(Scooter)#3 (2) {
+         ["gear":"Scooter":private]=> int(0) 
+         ["speed":protected]=> int(0) 
+        } 
+}
