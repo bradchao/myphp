@@ -62,7 +62,36 @@
         return $tempId;
     }
 
+    class Bike {
+        // Bike has-a speed
+        protected $speed = 0;
+    
+        // Bike has-a upSpeed()
+        function upSpeed(){
+            $this->speed = $this->speed < 1 ? 1 : $this->speed*1.2 ;
+        }
+        function downSpeed(){
+            $this->speed = $this->speed < 1 ? 0 : $this->speed*0.7 ;
+        }  
+        function getSpeed(){
+            return $this->speed;
+        }  
+    }
 
+    // Scooter is-a Bike
+    class Scooter extends Bike {
+        private $gear = 0;
+
+        function chGear($gear = 0){
+            if ($gear >= 0 && $gear <= 7){
+                $this->gear = $gear;
+            }
+        }
+
+        function upSpeed(){
+            $this->speed = $this->speed < 1 ? 1 : $this->speed*($this->gear*1.2);
+        }
+    }
 
 
 
