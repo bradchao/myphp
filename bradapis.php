@@ -91,8 +91,26 @@
         function upSpeed(){
             $this->speed = $this->speed < 1 ? 1 : $this->speed*($this->gear*1.2);
         }
+
+        function dump(){
+            var_dump($this);
+        }
     }
 
+    class Person {
+        private $name, $bike, $scooter;
+        // 建構式/建構子/建構方法/Constructor => 物件初始化
+        // 進行屬性的初始化
+        function __construct($name){
+            $this->name = $name;
+            $this->bike = new Bike;
+            $this->scooter = new Scooter;
+        }
+
+        function getName(){return $this->name;}
+        function getBike(){return $this->bike;}
+        function getScooter(){return $this->scooter;}
+    }
 
 
 
