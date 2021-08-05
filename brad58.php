@@ -6,6 +6,7 @@
 
     while ($rows = $result->fetch_array()){
         echo "{$rows['cID']} : {$rows['cName']} : {$rows['ch']}<br />";
+        //echo "{$rows[0]} : {$rows[1]} : {$rows[7]}<br />";
     }
 
 
