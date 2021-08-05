@@ -14,11 +14,23 @@
         }
     }
 
-    function test1(){
-        console.log("OK1");
+    function checkAccount(){
+        let account = document.getElementById('account').value;
+        console.log("brad63.php?account=" + account);
+
+        xhttp.onreadystatechange = afterCheck;
+        xhttp.open("GET", "brad63.php?account=" + account);
+        xhttp.send();
     }
+
+    function afterCheck(){
+        if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("mesg").innerHTML =
+                xhttp.responseText;
+        }
+    }
+
     function test2(){
-        console.log("OK2");
         return true;
     }
 
@@ -26,8 +38,9 @@
 
 Register Form
 <hr />
-<form method="post" action="brad63.php" onsubmit="return test2();">
-    Account: <input type="text" name="account" onblur="test1()"/><br />
+<form method="post" action="brad64.php" onsubmit="return test2();">
+    Account: <input type="text" id='account' name="account" onblur="checkAccount()"/> 
+    <span id='mesg'></span> <br />
     Password: <input type="password" name="passwd" /><br />
     Email: <input type="text" name="email" /><br />
     <input type="submit" value="Register" />
