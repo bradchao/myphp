@@ -14,22 +14,23 @@
         }
     }
 
-    // function test0(){
-    //     setInterval(test, 1000);
-    // }
+    function test1(){
+        console.log("OK1");
+    }
+    function test2(){
+        console.log("OK2");
+        return true;
+    }
 
 </script>
 
 Register Form
 <hr />
-<form method="post" action="brad62.php">
-    Account: <input type="text" name="account" /><br />
+<form method="post" action="brad63.php" onsubmit="return test2();">
+    Account: <input type="text" name="account" onblur="test1()"/><br />
     Password: <input type="password" name="passwd" /><br />
     Email: <input type="text" name="email" /><br />
     <input type="submit" value="Register" />
 </form>
 <hr />
-<div id='lottery'></div>
-<input type="button" value="test" onclick="test()" /><br />
-<div id='here'></div>
 
