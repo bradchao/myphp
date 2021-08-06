@@ -2,19 +2,6 @@
     const xhttp = new XMLHttpRequest();
     var isCheckOK = false;
 
-    function test(){
-        xhttp.onreadystatechange = callback;
-        xhttp.open("GET", "ajax.php");
-        xhttp.send();
-    }
-
-    function callback(){
-        if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("here").innerHTML =
-                xhttp.responseText;
-        }
-    }
-
     function checkAccount(){
         isCheckOK = false;
         let account = document.getElementById('account').value;

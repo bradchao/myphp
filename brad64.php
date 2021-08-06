@@ -1,5 +1,6 @@
 <?php
     // 新增會員
+    // $_REQUEST => $_GET / $_POST
     if (!isset($_POST['account'])) return;
 
     include('bradsql.php');
@@ -13,6 +14,7 @@
 
     $stmt->bind_param('sss', $account,$passwd,$email);
     $stmt->execute();
+
 
 
 ?>
