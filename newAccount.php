@@ -7,11 +7,26 @@
     $account = $_POST['account'];
     $passwd = password_hash($_POST['passwd'], PASSWORD_DEFAULT);
     $email = $_POST['email'];
+    $birthday = $_POST['birthday'];
 
-    $sql = "INSERT INTO member (account,passwd,email) VALUES (?,?,?)";
-    $stmt = $mysqli->prepare($sql);
-    //$stmt = mysqli_prepare($mysqli, $sql);
+    $like = $_POST['like']; // array
+    $habby = '';
+    foreach($like as $v) $habby .= $v;
+    //echo "{$birthday} : {$habby}";
 
-    $stmt->bind_param('sss', $account,$passwd,$email);
-    $stmt->execute();    
+    $icon = null;
+    if ($_FILES['icon']['error'] == 0){
+        $icon = addslashes(file_get_contents($_FILES['icon']['tmp_name'])) ;
+    }
+
+    $sql = "INSERT INTO member (account,passwd,email,birthday,habby,icon) " .
+        "VALUES ('{$account}','{$passwd}','{$email}','{$birthday}','{$habby}','{$icon}' )";
+
+    if ($mysqli->query($sql)){
+        echo 'OK';
+    }else{
+        echo 'XX';
+    }
+
+
 ?>

@@ -30,11 +30,21 @@
 </script>
 Register Form
 <hr />
-<form method="post" action="newAccount.php" onsubmit="return checkForm();">
+<form method="post" enctype="multipart/form-data"
+    action="newAccount.php" onsubmit="return checkForm();">
     Account: <input type="text" id='account' name="account" onblur="checkAccount()"/> 
     <span id='mesg'></span> <br />
     Password: <input type="password" name="passwd" /><br />
     Email: <input type="text" name="email" /><br />
+    Birthday: <input type="date" name="birthday" /><br />
+    Like:<br /> 
+    <input type="checkbox" name="like[]" value="1">111
+    <input type="checkbox" name="like[]" value="2">222
+    <input type="checkbox" name="like[]" value="3">333<br />
+    <input type="checkbox" name="like[]" value="4">444
+    <input type="checkbox" name="like[]" value="5">555
+    <input type="checkbox" name="like[]" value="6">666<br />
+    Icon: <input type="file" name="icon" value="icon" /><br />
     <input type="submit" value="Register" />
 </form>
 <hr />
